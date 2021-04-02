@@ -4,7 +4,7 @@ const App: React.FC = () =>
 {
   return (
     <div className="App">
-      <p>Hello world!</p>
+      <p>Hello world from REACT!</p>
     </div>
   );
 }
