@@ -11,12 +11,12 @@ export type ItemProps = {
 };
 
 const item = (props: ItemProps) => (
-    <button className="Item" onClick={() => { console.log('onClick'); props.clicked(props.id); return true }}>
+    <article className="Item" onClick={() => { console.log('onClick'); props.clicked(props.id); return true }}>
         <h1>{props.title}</h1>
         <div className="Info">
             <div className="Author">{props.author}</div>
         </div>
-    </button>
+    </article>
 );
 
 export default item;

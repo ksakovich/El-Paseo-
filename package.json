@@ -22,7 +22,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "NODE_ENV=production node node_modules/.bin/webpack && cp src/index.css public/index.css"
+    "prepare": "NODE_ENV=production node node_modules/.bin/webpack && cp src/index.css public/index.css",
+    "prepareLocal": "NODE_ENV=development node node_modules/.bin/webpack && cp src/index.css public/index.css"
   },
   "eslintConfig": {
     "extends": [

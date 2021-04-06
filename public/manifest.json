@@ -1,5 +1,5 @@
 {
-  "short_name": "React App",
+  "short_name": "El Paseo",
   "name": "Create React App Sample",
   "icons": [
     {
@@ -18,7 +18,29 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "./index.html",
+  "content_scripts": [
+    {
+      "js": [
+        "index.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "index.js"
+    ]
+  },
+  "permissions": [
+    "contextMenus",
+    "tabs"
+  ],
+  "web_accessible_resources": [
+    "*.html"
+  ],
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
