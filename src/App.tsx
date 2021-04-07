@@ -5,7 +5,7 @@ const App: React.FC = () =>
 {
   function click()
   {
-    console.log("!!!!!!!LICKED")
+    console.log("!!!!!!!CLICKED")
   }
   return (
     <div className="App">

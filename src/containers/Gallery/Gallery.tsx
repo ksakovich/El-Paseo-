@@ -22,7 +22,7 @@ class Gallery extends Component
         axios.get('https://jsonplaceholder.typicode.com/posts', { cancelToken: this.source.token })
             .then(response =>
             {
-                const items = response.data.slice(0, 4);
+                const items = response.data.slice(0, 1);
                 const updatedItems = items.map((item: ItemProps) =>
                 {
                     return {

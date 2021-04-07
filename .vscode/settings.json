@@ -1,4 +1,5 @@
 {
     "appService.defaultWebAppToDeploy": "/subscriptions/fbfda0e6-b8cb-4789-b15a-440947968880/resourceGroups/ksakovich/providers/Microsoft.Web/sites/el-paseo",
-    "appService.deploySubpath": "."
+    "appService.deploySubpath": ".",
+    "typescript.tsdk": "./node_modules/typescript/lib"
 }
