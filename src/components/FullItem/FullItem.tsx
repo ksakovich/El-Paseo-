@@ -16,8 +16,6 @@ class FullItem extends Component<Props>
         let item = <p style={{ textAlign: 'center' }}>Please select an Item!</p>;
         if (this.props.id != null)
         {
-            console.log('wtf')
-
             item = (
                 <div className="FullItem">
                     <h1>Title</h1>

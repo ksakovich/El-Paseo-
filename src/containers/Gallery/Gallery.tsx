@@ -22,7 +22,7 @@ class Gallery extends Component
         axios.get('https://jsonplaceholder.typicode.com/posts', { cancelToken: this.source.token })
             .then(response =>
             {
-                const items = response.data.slice(0, 1);
+                const items = response.data.slice(0, 2);
                 const updatedItems = items.map((item: ItemProps) =>
                 {
                     return {
@@ -40,6 +40,7 @@ class Gallery extends Component
 
     itemSelectedHandler = (id: number) =>
     {
+        // event.preventDefault();
         console.log('itemSelectedHandler', id)
 
         this.setState({ selectedItemId: id });
@@ -53,7 +54,8 @@ class Gallery extends Component
                 id={item.id}
                 title={item.title}
                 key={item.id} author={item.author}
-                clicked={() => this.itemSelectedHandler(item.id)} />;
+                clicked={() => this.itemSelectedHandler(item.id)
+                } />;
         });
         return (
             <div>
