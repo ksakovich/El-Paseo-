@@ -22,7 +22,7 @@ class Gallery extends Component
         axios.get('https://jsonplaceholder.typicode.com/posts', { cancelToken: this.source.token })
             .then(response =>
             {
-                const items = response.data.slice(0, 2);
+                const items = response.data.slice(0, 40);
                 const updatedItems = items.map((item: ItemProps) =>
                 {
                     return {
@@ -58,8 +58,8 @@ class Gallery extends Component
                 } />;
         });
         return (
-            <div>
-                <section className="Galleries">
+            <div >
+                <section className="Galleries py-5 container">
                     {items}
                 </section>
                 <section>

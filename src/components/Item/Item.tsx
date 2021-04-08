@@ -1,4 +1,6 @@
 import React from 'react';
+import
+{ Card, Image } from 'react-bootstrap';
 import './Item.css';
 
 
@@ -11,13 +13,29 @@ export type ItemProps = {
     clicked: (id: number | null) => void
 };
 
+const mystyle = {
+    height: '70%',
+    width: '100%'
+};
+// const path = require('path');
 const item = (props: ItemProps) => (
-    <article className="Item" onClick={() => { console.log('onClick'); props.clicked(props.id); return true }} style={{ cursor: 'pointer' }}>
-        <h1>{props.title}</h1>
-        <div className="Info">
-            <div className="Author">{props.author}</div>
-        </div>
-    </article>
+    // <article className="Item" onClick={() => { console.log('onClick'); props.clicked(props.id); return true }} style={{ cursor: 'pointer' }}>
+    //     <h1>{props.title}</h1>
+    //     <div className="Info">
+    //         <div className="Author">{props.author}</div>
+    //     </div>
+    // </article>
+
+    <Card className="Item card" onClick={() => { console.log('onClick'); props.clicked(props.id); return true }} >
+        <Card.Img as={Image} variant="top" src={'./Images/Products/pie.jpg'} className='img-fluid card-img-top' style={mystyle} />
+        <Card.Body className="card-body">
+            <Card.Title className="card-title">{props.title}</Card.Title>
+            <Card.Text className="text-muted">
+                {props.author}
+            </Card.Text>
+        </Card.Body>
+    </Card>
+
 );
 
 export default item;
