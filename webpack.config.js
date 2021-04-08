@@ -8,6 +8,11 @@ module.exports = {
         path: path.resolve(__dirname, 'public')
     },
     devtool: 'inline-source-map',
+    devServer: {
+        contentBase: path.join(__dirname, 'public'),
+        compress: true,
+        port: 3000,
+    },
     module: {
         rules:
             [
