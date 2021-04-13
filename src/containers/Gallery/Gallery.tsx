@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import { Container } from 'react-bootstrap';
 import Item, { ItemProps } from '../../components/Item/Item';
 import FullItem from '../../components/FullItem/FullItem';
 import NewItem from '../../components/NewItem/NewItem';
@@ -22,7 +22,7 @@ class Gallery extends Component
         axios.get('https://jsonplaceholder.typicode.com/posts', { cancelToken: this.source.token })
             .then(response =>
             {
-                const items = response.data.slice(0, 40);
+                const items = response.data.slice(0, 6);
                 const updatedItems = items.map((item: ItemProps) =>
                 {
                     return {

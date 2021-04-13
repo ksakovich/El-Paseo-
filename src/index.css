@@ -5,3 +5,26 @@ html{
 body{
   margin: 0;
 }
+
+ul {
+  list-style-type: none;
+}
+
+#main-footer {
+  background: #f4511e;
+  color: #fff;
+}
+
+.ft-social-list {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.25rem;
+}
+.ft-social-list li {
+  margin: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.ft-social-list li i {
+  color: #fff;
+}
