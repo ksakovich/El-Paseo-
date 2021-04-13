@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Container } from 'react-bootstrap';
 import Item, { ItemProps } from '../../components/Item/Item';
-import FullItem from '../../components/FullItem/FullItem';
-import NewItem from '../../components/NewItem/NewItem';
+// import FullItem from '../../components/FullItem/FullItem';
+// import NewItem from '../../components/NewItem/NewItem';
 import './Gallery.css';
 
 
@@ -61,12 +60,6 @@ class Gallery extends Component
             <div >
                 <section className="Galleries py-5 container">
                     {items}
-                </section>
-                <section>
-                    <FullItem id={this.state.selectedItemId} />
-                </section>
-                <section>
-                    <NewItem />
                 </section>
             </div>
         );
