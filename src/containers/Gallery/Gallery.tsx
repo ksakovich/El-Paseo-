@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Item, { ItemProps } from '../../components/Item/Item';
-// import FullItem from '../../components/FullItem/FullItem';
-// import NewItem from '../../components/NewItem/NewItem';
+import FullItem from '../../components/FullItem/FullItem';
+import NewItem from '../../components/NewItem/NewItem';
 import './Gallery.css';
 
 
@@ -51,8 +51,11 @@ class Gallery extends Component
         {
             return <Item
                 id={item.id}
+                userId={item.userId}
                 title={item.title}
-                key={item.id} author={item.author}
+                key={item.id}
+                author={item.author}
+                body={item.body}
                 clicked={() => this.itemSelectedHandler(item.id)
                 } />;
         });
@@ -60,6 +63,12 @@ class Gallery extends Component
             <div >
                 <section className="Galleries py-5 container">
                     {items}
+                </section>
+                <section>
+                    <FullItem id={this.state.selectedItemId} />
+                </section>
+                <section>
+                    <NewItem />
                 </section>
             </div>
         );

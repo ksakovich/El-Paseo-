@@ -15,7 +15,7 @@ for (let number = 1; number <= 5; number++)
 
 const pagination = () => (
     <Container>
-        <Pagination size="lg">
+        <Pagination size="lg" style={{ textAlign: 'center' }}>
             <Pagination.First />
             <Pagination.Prev />
             <Pagination.Item>{1}</Pagination.Item>

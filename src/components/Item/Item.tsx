@@ -5,10 +5,10 @@ import './Item.css';
 
 
 export type ItemProps = {
-    // userId: number,
+    userId: number,
     id: number,
     title: string,
-    // body: string
+    body: string,
     author: string,
     clicked: (id: number | null) => void
 };
