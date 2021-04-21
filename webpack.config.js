@@ -59,7 +59,7 @@ module.exports = {
                         loader: 'url-loader',
                     },
                 },
-                // { test: /\.(js)$/, use: 'babel-loader' },
+                { test: /\.(js)$/, use: 'babel-loader' },
 
             ]
     },

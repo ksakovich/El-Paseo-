@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, Button, Form, Nav, FormControl } from 'react-bootstrap';
 const navBar = () => (
     <Navbar bg="light" variant="light">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand as={Link} to="/" >
             <img
                 src="/Images/Logo/LogoClear.png"
                 width="30"
@@ -13,15 +14,23 @@ const navBar = () => (
             />
         </Navbar.Brand>
         <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="/">Galllery</Nav.Link>
+            <Nav.Link as={Link} to="/" >Home</Nav.Link>
+            {/* <LinkContainer to="/">
+                <Nav.Link >Home</Nav.Link>
+            </LinkContainer> */}
+
             {/* <Nav.Link href="#products">Products</Nav.Link>
             <Nav.Link href="#farmers">Farmers</Nav.Link>
             <Nav.Link href="#aboutUs">About Us</Nav.Link> */}
-            <Link to="/">Gallery</Link>
+
+            <Nav.Link as={Link} to="/checkout">Checkout</Nav.Link>
+            {/* <Nav.Link as={Link} to="/item-details/:itemId">Item Details</Nav.Link> */}
+            <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
+
+            {/* <Link to="/">Gallery</Link>
             <Link to="/checkout">Checkout</Link>
             <Link to="/itemdetails">Item Details</Link>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">Cart</Link> */}
         </Nav>
         <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />

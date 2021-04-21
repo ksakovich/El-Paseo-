@@ -11,25 +11,23 @@ import ItemDetails from './pages/ItemDetails/ItemDetails';
 const App: React.FC = () =>
 {
   return (
-    <BrowserRouter>
+
+    <div className="App">
       <Navbar />
+      <Switch>
 
-      <div className="App">
-        <Switch>
+        <Route exact path="/item-details/:itemId" component={ItemDetails} />
+        <Route exact path="/cart" component={Cart} />
+        <Route exact path="/checkout" component={Checkout} />
 
-          <Route exact path="/itemdetails" component={ItemDetails} />
-          <Route exact path="/cart" component={Cart} />
-          <Route exact path="/checkout" component={Checkout} />
-
-          <Route exact path="/" >
-            <Carousel />
-            <Gallery />
-            <Pagination />
-          </Route>
-        </Switch>
-
-      </div>
-    </BrowserRouter>
+        <Route exact path="/" >
+          <Carousel />
+          <Gallery />
+          <Pagination />
+        </Route>
+      </Switch>
+      <button onClick={() => { console.log('App Clicked'); }}> Click</button>
+    </div>
   );
 }
 

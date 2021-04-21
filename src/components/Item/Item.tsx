@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Item.css';
 
 
@@ -32,6 +33,8 @@ const item = (props: ItemProps) => (
             <Card.Text className="text-muted">
                 {props.author}
             </Card.Text>
+            <button onClick={() => { console.log('Item Clicked'); }}> Click</button>
+            <Link to='item-details/:id' />
         </Card.Body>
     </Card>
 
