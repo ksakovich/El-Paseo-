@@ -16,19 +16,15 @@ const App: React.FC = () =>
 
       <div className="App">
         <Switch>
-          <Route path="/gallery" >
+
+          <Route exact path="/itemdetails" component={ItemDetails} />
+          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/checkout" component={Checkout} />
+
+          <Route exact path="/" >
             <Carousel />
             <Gallery />
             <Pagination />
-          </Route>
-          <Route path="/itemdetails">
-            <ItemDetails />
-          </Route>
-          <Route path="/cart">
-            <Cart />
-          </Route>
-          <Route path="/checkout">
-            <Checkout />
           </Route>
         </Switch>
 
