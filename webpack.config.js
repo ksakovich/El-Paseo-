@@ -1,17 +1,21 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
     entry: './src/index.tsx',
     output: {
         filename: 'index.js',
-        path: path.resolve(__dirname, 'public')
+        path: path.resolve(__dirname, 'public'),
+        // publicPath: '/'
     },
     devtool: 'inline-source-map',
     devServer: {
         contentBase: path.join(__dirname, 'public'),
         compress: true,
         port: 3000,
+        historyApiFallback: true,
     },
     module: {
         rules:
@@ -55,10 +59,24 @@ module.exports = {
                         loader: 'url-loader',
                     },
                 },
+                // { test: /\.(js)$/, use: 'babel-loader' },
 
             ]
     },
+
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
-    }
+    },
+    plugins: [
+        new Dotenv(),
+        new HtmlWebpackPlugin({
+            template: 'public/index.html'
+        })
+    ],
+    node: {
+        child_process: "empty",
+        fs: "empty",
+        dgram: "empty",
+        // fs: "empty", // if unable to resolve "fs"
+    },
 };

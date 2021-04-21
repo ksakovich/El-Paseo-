@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar, Button, Form, Nav, FormControl } from 'react-bootstrap';
 const navBar = () => (
     <Navbar bg="light" variant="light">
@@ -13,9 +14,14 @@ const navBar = () => (
         </Navbar.Brand>
         <Nav className="mr-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#products">Products</Nav.Link>
+            <Nav.Link href="gallery">Galllery</Nav.Link>
+            {/* <Nav.Link href="#products">Products</Nav.Link>
             <Nav.Link href="#farmers">Farmers</Nav.Link>
-            <Nav.Link href="#aboutUs">About Us</Nav.Link>
+            <Nav.Link href="#aboutUs">About Us</Nav.Link> */}
+            {/* <Link to="/gallery">Galllery</Link> */}
+            <Link to="/checkout">Checkout</Link>
+            <Link to="/itemdetails">Item Details</Link>
+            <Link to="/cart">Cart</Link>
         </Nav>
         <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />

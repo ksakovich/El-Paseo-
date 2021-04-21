@@ -1,6 +1,5 @@
 import React from 'react';
-import
-{ Card, Image } from 'react-bootstrap';
+import { Card, Image } from 'react-bootstrap';
 import './Item.css';
 
 

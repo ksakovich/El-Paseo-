@@ -4,6 +4,11 @@ import Item, { ItemProps } from '../../components/Item/Item';
 import FullItem from '../../components/FullItem/FullItem';
 import NewItem from '../../components/NewItem/NewItem';
 import './Gallery.css';
+// import connection from '../../utilities/database/dbConnector';
+
+
+
+
 
 
 class Gallery extends Component
@@ -18,6 +23,8 @@ class Gallery extends Component
 
     componentDidMount()
     {
+
+
         axios.get('https://jsonplaceholder.typicode.com/posts', { cancelToken: this.source.token })
             .then(response =>
             {
