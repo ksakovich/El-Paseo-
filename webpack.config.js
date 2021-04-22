@@ -8,7 +8,7 @@ module.exports = {
     output: {
         filename: 'index.js',
         path: path.resolve(__dirname, 'public'),
-        // publicPath: '/'
+        publicPath: '/'
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -59,7 +59,7 @@ module.exports = {
                         loader: 'url-loader',
                     },
                 },
-                { test: /\.(js)$/, use: 'babel-loader' },
+                // { test: /\.(js)$/, use: 'babel-loader' },
 
             ]
     },
@@ -69,9 +69,7 @@ module.exports = {
     },
     plugins: [
         new Dotenv(),
-        new HtmlWebpackPlugin({
-            template: 'public/index.html'
-        })
+        new HtmlWebpackPlugin({ template: 'public/index.html' })
     ],
     node: {
         child_process: "empty",

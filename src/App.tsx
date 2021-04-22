@@ -16,11 +16,11 @@ const App: React.FC = () =>
       <Navbar />
       <Switch>
 
-        <Route exact path="/item-details/:itemId" component={ItemDetails} />
+        <Route exact path="/products/:itemId" component={ItemDetails} />
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/checkout" component={Checkout} />
 
-        <Route exact path="/" >
+        <Route path="/" exact >
           <Carousel />
           <Gallery />
           <Pagination />

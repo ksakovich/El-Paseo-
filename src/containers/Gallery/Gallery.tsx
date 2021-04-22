@@ -74,9 +74,9 @@ class Gallery extends Component
                 <section>
                     <FullItem id={this.state.selectedItemId} />
                 </section>
-                <section>
+                {/* <section>
                     <NewItem />
-                </section>
+                </section> */}
             </div>
         );
     }

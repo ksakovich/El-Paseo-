@@ -33,8 +33,8 @@ const item = (props: ItemProps) => (
             <Card.Text className="text-muted">
                 {props.author}
             </Card.Text>
-            <button onClick={() => { console.log('Item Clicked'); }}> Click</button>
-            <Link to='item-details/:id' />
+
+            <Link className="btn btn-outline-success" to={`/products/${props.id}`} > View Details</Link>
         </Card.Body>
     </Card>
 
