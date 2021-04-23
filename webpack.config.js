@@ -10,6 +10,7 @@ module.exports = {
         path: path.resolve(__dirname, 'public'),
         publicPath: '/'
     },
+    // output.publicPath = './',
     devtool: 'inline-source-map',
     devServer: {
         contentBase: path.join(__dirname, 'public'),

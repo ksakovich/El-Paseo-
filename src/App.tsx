@@ -7,6 +7,7 @@ import Pagination from './components/Pagination/Pagination';
 import Cart from './pages/Cart/Cart';
 import Checkout from './pages/Checkout/Checkout';
 import ItemDetails from './pages/ItemDetails/ItemDetails';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 const App: React.FC = () =>
 {
@@ -24,6 +25,9 @@ const App: React.FC = () =>
           <Carousel />
           <Gallery />
           <Pagination />
+        </Route>
+        <Route path='*'>
+          <NotFoundPage />
         </Route>
       </Switch>
       <button onClick={() => { console.log('App Clicked'); }}> Click</button>
