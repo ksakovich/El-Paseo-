@@ -31,8 +31,8 @@ export const Item = (props: ItemProps) => (
             <Card.Text className="text-muted">
                 {props.itemPrice}
             </Card.Text>
-            <Link className="outline-success " to='item-details/:itemId' />
-            <button onClick={() => { console.log('Item Clicked'); }}> Click</button>
+            <Link className="btn btn-outline-success" to='item-details/:itemId'> View Details</Link>
+            {/* <button onClick={() => { console.log('Item Clicked'); }}> Click</button> */}
 
         </Card.Body>
     </Card>

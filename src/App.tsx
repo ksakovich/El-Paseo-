@@ -30,7 +30,7 @@ const App: React.FC = () =>
           <NotFoundPage />
         </Route>
       </Switch>
-      <button onClick={() => { console.log('App Clicked'); }}> Click</button>
+      {/* <button onClick={() => { console.log('App Clicked'); }}> Click</button> */}
     </div>
   );
 }
