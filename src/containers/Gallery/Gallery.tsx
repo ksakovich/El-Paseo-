@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Item, { ItemProps } from '../../components/Item/Item';
+import { ItemProps, Item } from '../../components/Item/Item';
 import FullItem from '../../components/FullItem/FullItem';
 import NewItem from '../../components/NewItem/NewItem';
+import { items as galleryItems, } from '../../backend/models/gallery';
+import { Item as GalleryItem } from '../../backend/models/item';
+
 import './Gallery.css';
-// import connection from '../../utilities/database/dbConnector';
-
-
 
 
 
@@ -19,30 +19,41 @@ class Gallery extends Component
             selectedItemId: null
         }
 
-    source = axios.CancelToken.source();
+    // source = axios.CancelToken.source();
+
 
     componentDidMount()
     {
+        //     axios.get('https://jsonplaceholder.typicode.com/posts', { cancelToken: this.source.token })
+        //         .then(response =>
+        //         {
+        //             const items = response.data.slice(0, 6);
+        //             const updatedItems = items.map((item: ItemProps) =>
+        //             {
+        //                 return {
+        //                     ...item,
+        //                     author: "Kirill"
+        //                 }
+        //             }
+        //             );
+        //             this.setState({ items: updatedItems });
+        //         }).catch(e =>
+        //         {
+        //             console.log(e);
+        //         });
+        let dummyItems = galleryItems;
+        let items = dummyItems;
+        const updatedItems = items.map((item: GalleryItem) =>
+        {
+            return {
+                ...item,
+            }
+        });
+        this.setState({ items: updatedItems });
 
 
-        axios.get('https://jsonplaceholder.typicode.com/posts', { cancelToken: this.source.token })
-            .then(response =>
-            {
-                const items = response.data.slice(0, 6);
-                const updatedItems = items.map((item: ItemProps) =>
-                {
-                    return {
-                        ...item,
-                        author: "Kirill"
-                    }
-                }
-                );
-                this.setState({ items: updatedItems });
-            }).catch(e =>
-            {
-                console.log(e);
-            });
     }
+
 
     itemSelectedHandler = (id: number) =>
     {
@@ -57,13 +68,17 @@ class Gallery extends Component
         const items = this.state.items.map(item =>
         {
             return <Item
-                id={item.id}
-                userId={item.userId}
-                title={item.title}
-                key={item.id}
-                author={item.author}
-                body={item.body}
-                clicked={() => this.itemSelectedHandler(item.id)
+                key={item.itemId}
+                itemId={item.itemId}
+                categoryId={item.categoryId}
+                itemName={item.itemName}
+                itemDescription={item.itemDescription}
+                itemPrice={item.itemPrice}
+                itemSize={item.itemSize}
+                isComposite={item.isComposite}
+                itemUnits={item.itemUnits}
+                quantityInStock={item.quantityInStock}
+                clicked={() => this.itemSelectedHandler(item.itemId)
                 } />;
         });
         return (
@@ -81,10 +96,10 @@ class Gallery extends Component
         );
     }
 
-    componentWillUnmount()
-    {
-        this.source.cancel()
-    }
+    // componentWillUnmount()
+    // {
+    //     this.source.cancel()
+    // }
 }
 
 export default Gallery;

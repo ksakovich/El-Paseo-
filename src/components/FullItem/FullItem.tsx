@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { ItemProps } from '../Item/Item'
+import { ItemProps, Item } from '../Item/Item';
 import './FullItem.css';
 
 interface Props
@@ -14,7 +14,7 @@ class FullItem extends Component<Props>
         loadedItem: null
     }
 
-    componentDidUpdate(prevProps: ItemProps)
+    componentDidUpdate(prevProps: Props)
     {
         if (this.props.id !== null)
         {
@@ -46,8 +46,8 @@ class FullItem extends Component<Props>
         {
             item = (
                 <div className="FullItem">
-                    <h1>{this.state.loadedItem.title}</h1>
-                    <p>{this.state.loadedItem.body}</p>
+                    <h1>{this.state.loadedItem.itemName}</h1>
+                    <p>{this.state.loadedItem.itemPrice}</p>
                     <div className="Edit">
                         <button className="Delete">Delete</button>
                     </div>
