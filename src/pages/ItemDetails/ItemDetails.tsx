@@ -8,7 +8,7 @@ const ItemDeatils = (props: ItemProps) =>
     return (
         <section>
             <h1>This will be a ItemDetails Page!!!</h1>
-            <p>Item ID : {props.id}</p>
+            <p>Item ID : {props.itemId}</p>
 
         </section>
     );

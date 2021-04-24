@@ -1,7 +1,7 @@
-import { RequestHandler } from 'express';
-import { Item } from '../models/item';
-const items: Item[] = [];
-export const createItem: RequestHandler = (req, res, next) =>
-{
-    // const newItem = new Item()
-};
+// import { RequestHandler } from 'express';
+// const items: Item[] = [];
+// export const createItem: RequestHandler = (req, res, next) =>
+// {
+//     // const newItem = new Item()
+// };
+export { }
