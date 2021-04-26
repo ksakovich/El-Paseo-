@@ -4,7 +4,7 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.tsx',
+    entry: ['./src/index.tsx'],
     output: {
         filename: 'index.js',
         path: path.resolve(__dirname, 'public'),

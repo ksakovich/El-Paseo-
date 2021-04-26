@@ -1,21 +1,45 @@
 import http from 'http';
+import fs from 'fs';
 import express, { Request, Response, NextFunction } from 'express';
 import { json } from 'body-parser';
 import cartRoutes from './routes/cart';
 
 const server = http.createServer((req, res) =>
 {
-    console.log(req);
+    console.log("=====================  Hello world !!! ===================");
+    const url = req.url;
+    const method = req.method;
+    if (url === '/')
+    {
+        res.write('<html>');
+        res.write('<head><title>Enter Message</title><head>');
+        res.write('<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send</button></form></body>');
+        res.write('</html>');
+        return res.end();
+    }
+    if (url === '/message' && method === 'POST')
+    {
+        const body: Buffer[] = [];
+        req.on('data', (chunk) =>
+        {
+            console.log(chunk);
+            body.push(chunk);
+        });
+        return req.on('end', () =>
+        {
+            const parsedBody = Buffer.concat(body).toString();
+            const message = parsedBody.split('=')[1];
+            fs.writeFileSync('message.txt', message);
+            res.statusCode = 302;
+            res.setHeader('Location', '/');
+            return res.end();
+        });
+    }
+    res.setHeader('Content-Type', 'text/html');
+    res.write('<html>');
+    res.write('<head><title>My First Page</title><head>');
+    res.write('<body><h1>Hello from my Node.js Server!</h1></body>');
+    res.write('</html>');
+    res.end();
 });
-server.listen();
-
-const app = express();
-app.listen(3001);
-app.use(json);
-app.use('/items', cartRoutes);
-app.use((err: Error, req: Request, res: Response, next: NextFunction) =>
-{
-    res.status(500).json({ message: err.message });
-});
-
-export default app;
+server.listen(8080);

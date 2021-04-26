@@ -27,7 +27,8 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.js"
+    "src/**/*.js",
+    "src/backend/server.ts"
   ],
   "exclude": [
     "node_modules"
