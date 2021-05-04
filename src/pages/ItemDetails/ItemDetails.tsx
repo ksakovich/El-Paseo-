@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { ItemProps } from '../../components/Item/Item';
 
-const ItemDeatils = (props: ItemProps) =>
+const ItemDetails = (props: ItemProps) =>
 {
     console.log(props);
     const params = useParams<{ itemId: string }>();
@@ -14,4 +14,4 @@ const ItemDeatils = (props: ItemProps) =>
         </section>
     );
 };
-export default ItemDeatils;
+export default ItemDetails;

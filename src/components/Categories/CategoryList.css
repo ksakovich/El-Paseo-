@@ -1,0 +1,40 @@
+.list-menu {
+  width: 80%;
+  list-style: none;
+  margin: 4rem;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 6px;
+}
+
+.list-menu a {
+  color: #343a40;
+}
+.list-menu a:hover {
+  color: #3167eb;
+}
+
+.card-product-list {
+  margin-bottom: 20px;
+}
+.card-product-list .img-wrap {
+  height: 220px;
+  border-radius: 0.37rem 0 0 0.37rem;
+}
+.card-product-list .info-main {
+  padding: 1.5rem 1rem;
+}
+.card-product-list .info-aside {
+  padding: 1.5rem 1rem;
+  border-left: 1px solid #e4e4e4;
+  height: 100%;
+}
+
+.itemside .aside {
+  position: relative;
+  flex-shrink: 0;
+}
+
+a {
+  text-decoration: none;
+}
